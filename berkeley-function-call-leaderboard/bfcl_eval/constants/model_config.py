@@ -227,6 +227,19 @@ api_inference_model_map = {
         is_fc_model=True,
         underscore_to_dot=True,
     ),
+    # finetuned gpt-4.1-mini
+    "gpt-4.1-mini-2025-04-14-finetuned-FC": ModelConfig(
+        model_name="gpt-4.1-mini-2025-04-14-finetuned-FC",
+        display_name="GPT-4.1-mini-2025-04-14 FineTuned (FC)",
+        url="https://openai.com/index/gpt-4-1/",
+        org="OpenAI",
+        license="Proprietary",
+        model_handler=OpenAIResponsesHandler,
+        input_price=0.4,
+        output_price=1.6,
+        is_fc_model=True,
+        underscore_to_dot=True,
+    ),
     "gpt-4.1-mini-2025-04-14": ModelConfig(
         model_name="gpt-4.1-mini-2025-04-14",
         display_name="GPT-4.1-mini-2025-04-14 (Prompt)",

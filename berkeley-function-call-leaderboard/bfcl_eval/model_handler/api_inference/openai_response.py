@@ -72,9 +72,14 @@ class OpenAIResponsesHandler(BaseHandler):
             "tools": tools,
         }
 
+        if self.model_name == "gpt-4.1-mini-2025-04-14-finetuned-FC":
+            model = "ft:gpt-4.1-mini-2025-04-14:project:suffix:id"  # set to FT job's model 
+        else:
+            model = self.model_name.replace("-FC", "")
+
         kwargs = {
             "input": message,
-            "model": self.model_name.replace("-FC", ""),
+            "model": model,
             "store": False,
         }
 

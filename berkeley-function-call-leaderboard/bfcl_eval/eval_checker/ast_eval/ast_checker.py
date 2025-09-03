@@ -12,15 +12,17 @@ PYTHON_TYPE_MAPPING = {
     "string": str,
     "integer": int,
     "float": float,
+    "number": float,
     "boolean": bool,
     "array": list,
     "tuple": list,
     "dict": dict,
+    "object": dict,
     "any": str,
 }
 
 # This is the list of types that we need to recursively check its values
-PYTHON_NESTED_TYPE_CHECK_LIST = ["array", "tuple"]
+PYTHON_NESTED_TYPE_CHECK_LIST = ["array", "tuple", "object"]
 
 
 NESTED_CONVERSION_TYPE_LIST = ["Array", "ArrayList", "array"]

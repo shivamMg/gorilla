@@ -31,7 +31,7 @@ class OpenAIResponsesHandler(BaseHandler):
         # For our use case, it is recommended to use `developer` role instead.
         # See https://model-spec.openai.com/2025-04-11.html#definitions
         for prompt in prompts:
-            if prompt["role"] == "system":
+            if prompt.get("role") == "system":
                 prompt["role"] = "developer"
 
         return prompts
@@ -73,7 +73,7 @@ class OpenAIResponsesHandler(BaseHandler):
         }
 
         if self.model_name == "gpt-4.1-mini-2025-04-14-finetuned-FC":
-            model = "ft:gpt-4.1-mini-2025-04-14:project:suffix:id"  # set to FT job's model 
+            model = "ft:gpt-4.1-mini-2025-04-14:project:suffix:id"  # set to FT job's model
         else:
             model = self.model_name.replace("-FC", "")
 

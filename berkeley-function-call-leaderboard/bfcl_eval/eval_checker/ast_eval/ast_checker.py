@@ -50,8 +50,11 @@ def ast_checker(
                 "error_type": "simple_function_checker:wrong_count",
             }
 
+        expected_answer = possible_answer[0]
+        expected_answer_func_name = list(expected_answer.keys())[0]
+        expected_func_description = [func for func in func_description if func["name"] == expected_answer_func_name][0]
         return simple_function_checker(
-            func_description[0], model_output[0], possible_answer[0], language, model_name
+            expected_func_description, model_output[0], expected_answer, language, model_name
         )
 
 

@@ -280,7 +280,7 @@ def dict_checker(param: str, model_output: dict, possible_answers: list):
                 break
         
         for key, value in possible_answer.items():
-            if key not in model_output and "" not in value:
+            if key not in model_output: # and "" not in value:
                 result["valid"] = False
                 result["error"].append(f"Missing dict key parameter: '{key}'.")
                 result["error_type"] = "value_error:dict_key"

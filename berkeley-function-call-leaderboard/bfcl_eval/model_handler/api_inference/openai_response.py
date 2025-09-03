@@ -93,6 +93,7 @@ class OpenAIResponsesHandler(BaseHandler):
 
         if len(tools) > 0:
             kwargs["tools"] = tools
+            kwargs["tool_choice"] = "required"
 
         return self.generate_with_backoff(**kwargs)
 
